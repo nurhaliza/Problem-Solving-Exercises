@@ -63,6 +63,54 @@ variables:
     ex: x = "awesome"
 
         def myfunc():
-        print("Python is " + x)
+        print("Python is " + x) 
 
         myfunc()  # Python is awesome
+
+        - created a variable inside a function w/the same name as the global variable
+        ex: x = "awesome"
+
+            def myfunc():
+            x = "fantastic"
+            print("Python is " + x)
+
+            myfunc()
+
+            print("Python is " + x)
+            # Python is fantastic
+            # Python is awesome 
+
+        - global keyword - the variable belongs to the global scope 
+        ex: def myfunc():
+                global x
+                x = "fantastic"
+
+            myfunc()
+
+            print("Python is " + x)  # Python is fantastic
+        
+        * change a global variable inside a function 
+        ex: x = "awesome"
+
+            def myfunc():
+                global x
+                x = "fantastic"
+
+            myfunc()
+
+            print("Python is " + x)  # Python is fantastic
+
+data types - get the data type of any object by using the type() function
+
+numbers 
+    - 3 types: int, float, complex
+    - type conversion - convert from one type to another w/ the int(), float(), complex()
+    - random numbers - use import random and then use random keyword to print 
+    ex: import random
+
+        print(random.randrange(1, 10)) 
+
+casting 
+
+        
+        
