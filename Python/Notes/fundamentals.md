@@ -112,5 +112,7 @@ numbers
 
 casting 
 
+len function - len() - returns the length of a string 
+
         
         
