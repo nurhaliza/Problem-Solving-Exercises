@@ -112,7 +112,61 @@ numbers
 
 casting 
 
-len function - len() - returns the length of a string 
+len function - len() - returns the length of a string
+
+strings:
+    - not in = keywords that helps in checking certain phrases or characters is NOT present in a string
+    ex: txt = "The best things in life are free!"
+        print("expensive" not in txt) # True
+    
+    - slicing - allows you to return a range of characters
+    ex: b = "Hello, World!"
+        print(b[2:5]) # llo
+
+    - modify strings
+        - .upper() - returns string in upper case
+        - .lower() - returns string in lower case
+        - .strip() - removes any whitespace from the beginning or the end
+        ex: a = " Hello, World! "
+            print(a.strip()) # Hello, World!
+        - .split() - returns a list where the text between the specified separator becomes the list items
+        ex: a = "Hello, World!"
+            b = a.split(",")
+            print(b) # ['Hello', 'World!']
+    
+    - concatenate strings - w/ (+) sign
+
+    - format() - takes passed arguments, formats them, and places them in the string where the placeholders {} are
+    ex: quantity = 3
+        itemno = 567
+        price = 49.95
+        myorder = "I want {} pieces of item {} for {} dollars."
+        print(myorder.format(quantity, itemno, price)) 
+
+    ex: quantity = 3
+        itemno = 567
+        price = 49.95
+        myorder = "I want to pay {2} dollars for {0} pieces of item {1}."
+        print(myorder.format(quantity, itemno, price)) 
+
+    - escape characters - use \ \ around text that you want to use quotes for 
+    ex: txt = "We are the so-called "Vikings" from the north."
+        txt = "We are the so-called \"Vikings\" from the north." 
+        # We are the so-called "Vikings" from the north.
+    
+booleans: same as other languages
+
+operators:
+    - and - keyword
+    - or - keyword
+    - not - keyword
+    - % - modulus
+    - ** - exponentiation
+    - // - floor division
+
+lists - used to store multiple items in a single variable + store collections of data
+
+
 
         
         
