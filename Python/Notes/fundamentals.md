@@ -164,9 +164,76 @@ operators:
     - ** - exponentiation
     - // - floor division
 
-lists - used to store multiple items in a single variable + store collections of data
-
-
+lists - used to store multiple items in a single variable/store collections of data
+      - ordered (defined order), changeable (can change, add and remove items in a list after it has been created), and allow duplicate values
+      - if you add new items to a list, the new items will be placed at then end of the list
+      - are indexed and can have items with the same value
+      - ways to use lists:
+        - access items - by referring to the index number
+        ex: thislist = ["apple", "banana", "cherry"]
+            print(thislist[1]) # banana
+            - negative indexing
+            ex: thislist = ["apple", "banana", "cherry"]
+                print(thislist[-1]) # cherry 
+            - range of indexes 
+            ex: thislist = ["apple", "banana", "cherry", "orange", "kiwi", "melon", "mango"]
+                print(thislist[2:5]) # ['cherry', 'orange', 'kiwi']
+            ex: thislist = ["apple", "banana", "cherry", "orange", "kiwi", "melon", "mango"]
+                print(thislist[:4]) # ['apple', 'banana', 'cherry', 'orange'] 
+            ex: thislist = ["apple", "banana", "cherry", "orange", "kiwi", "melon", "mango"]
+                print(thislist[2:]) # ['cherry', 'orange', 'kiwi', 'melon', 'mango']
+        - change items - by referring to the index number
+            - replacing values in a list
+            ex: thislist = ["apple", "banana", "cherry"]
+            thislist[1] = "blackcurrant"
+            print(thislist) # ['apple', 'blackcurrant', 'cherry']
+            - replacing multiple values in a list
+            ex: thislist = ["apple", "banana", "cherry"]
+                thislist[1:2] = ["blackcurrant", "watermelon"]
+                print(thislist) # ['apple', 'blackcurrant', 'watermelon', 'cherry']
+            - if you insert less items than you replace, then the new items will be inserted  where you specified
+            ex: thislist = ["apple", "banana", "cherry"]
+                thislist[1:3] = ["watermelon"]
+                print(thislist) # ['apple', 'watermelon']
+            - insert() method - insert a new list item, w/out replacing any of the existing values 
+            ex: thislist = ["apple", "banana", "cherry"]
+                thislist.insert(2, "watermelon")
+                print(thislist) # ['apple', 'banana', 'watermelon', 'cherry']
+            - append() method - to add an item to the end of the list 
+            ex: thislist = ["apple", "banana", "cherry"]
+                thislist.append("orange")
+                print(thislist) # ['apple', 'banana', 'cherry', 'orange']
+            - extend() method - adds collections of data to a list
+            ex: thislist = ["apple", "banana", "cherry"]
+                tropical = ["mango", "pineapple", "papaya"]
+                thislist.extend(tropical)
+                print(thislist) # ['apple', 'banana', 'cherry', 'mango', 'pineapple', 'papaya']
+                - can append tuples, sets, dictionaries, etc.
+                ex: thislist = ["apple", "banana", "cherry"]
+                    thistuple = ("kiwi", "orange")
+                    thislist.extend(thistuple)
+                    print(thislist) # ['apple', 'banana', 'cherry', 'kiwi', 'orange']
+            - remove() method - removes specified item(s)
+            ex: thislist = ["apple", "banana", "cherry"]
+                thislist.remove("banana")
+                print(thislist) # ['apple', 'cherry']
+            - pop() method - removes the specified index
+            ex: thislist = ["apple", "banana", "cherry"]
+                thislist.pop(1)
+                print(thislist) # ['apple', 'cherry']
+                - if you do not specify the index
+                ex: thislist = ["apple", "banana", "cherry"]
+                    thislist.pop()
+                    print(thislist) # ['apple', 'banana']
+            - del keyword removes specified index
+            ex: thislist = ["apple", "banana", "cherry"]
+                del thislist[0]
+                print(thislist)
+                - delete entire list
+                ex: thislist = ["apple", "banana", "cherry"]
+                    del thislist
+            - clear() method
+            
 
         
         
