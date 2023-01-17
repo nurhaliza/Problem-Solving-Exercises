@@ -170,8 +170,8 @@ lists - used to store multiple items in a single variable/store collections of d
       - are indexed and can have items with the same value
       - ways to use lists:
         - access items - by referring to the index number
-        ex: thislist = ["apple", "banana", "cherry"]
-            print(thislist[1]) # banana
+            ex: thislist = ["apple", "banana", "cherry"]
+                print(thislist[1]) # banana
             - negative indexing
             ex: thislist = ["apple", "banana", "cherry"]
                 print(thislist[-1]) # cherry 
@@ -232,7 +232,10 @@ lists - used to store multiple items in a single variable/store collections of d
                 - delete entire list
                 ex: thislist = ["apple", "banana", "cherry"]
                     del thislist
-            - clear() method
+            - clear() method - empties the list
+            ex: thislist = ["apple", "banana", "cherry"]
+                thislist.clear()
+                print(thislist) # []
             
 
         
