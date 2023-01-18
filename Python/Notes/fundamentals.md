@@ -236,7 +236,16 @@ lists - used to store multiple items in a single variable/store collections of d
             ex: thislist = ["apple", "banana", "cherry"]
                 thislist.clear()
                 print(thislist) # []
-            
+        - loop through a list 
+            - for loop
+            ex: thislist = ["apple", "banana", "cherry"]
+                for x in thislist:
+                print(x)
+            - loop through by index numbers 
+            ex: thislist = ["apple", "banana", "cherry"]
+                for i in range(len(thislist)):
+                print(thislist[i])
+
 
         
         
