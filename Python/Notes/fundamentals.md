@@ -169,6 +169,7 @@ lists - used to store multiple items in a single variable/store collections of d
       - if you add new items to a list, the new items will be placed at then end of the list
       - are indexed and can have items with the same value
       - ways to use lists:
+
         - access items - by referring to the index number
             ex: thislist = ["apple", "banana", "cherry"]
                 print(thislist[1]) # banana
@@ -182,6 +183,7 @@ lists - used to store multiple items in a single variable/store collections of d
                 print(thislist[:4]) # ['apple', 'banana', 'cherry', 'orange'] 
             ex: thislist = ["apple", "banana", "cherry", "orange", "kiwi", "melon", "mango"]
                 print(thislist[2:]) # ['cherry', 'orange', 'kiwi', 'melon', 'mango']
+
         - change items - by referring to the index number
             - replacing values in a list
             ex: thislist = ["apple", "banana", "cherry"]
@@ -195,14 +197,17 @@ lists - used to store multiple items in a single variable/store collections of d
             ex: thislist = ["apple", "banana", "cherry"]
                 thislist[1:3] = ["watermelon"]
                 print(thislist) # ['apple', 'watermelon']
+
             - insert() method - insert a new list item, w/out replacing any of the existing values 
             ex: thislist = ["apple", "banana", "cherry"]
                 thislist.insert(2, "watermelon")
                 print(thislist) # ['apple', 'banana', 'watermelon', 'cherry']
+
             - append() method - to add an item to the end of the list 
             ex: thislist = ["apple", "banana", "cherry"]
                 thislist.append("orange")
                 print(thislist) # ['apple', 'banana', 'cherry', 'orange']
+                
             - extend() method - adds collections of data to a list
             ex: thislist = ["apple", "banana", "cherry"]
                 tropical = ["mango", "pineapple", "papaya"]
@@ -213,10 +218,12 @@ lists - used to store multiple items in a single variable/store collections of d
                     thistuple = ("kiwi", "orange")
                     thislist.extend(thistuple)
                     print(thislist) # ['apple', 'banana', 'cherry', 'kiwi', 'orange']
+
             - remove() method - removes specified item(s)
             ex: thislist = ["apple", "banana", "cherry"]
                 thislist.remove("banana")
                 print(thislist) # ['apple', 'cherry']
+
             - pop() method - removes the specified index
             ex: thislist = ["apple", "banana", "cherry"]
                 thislist.pop(1)
@@ -225,6 +232,7 @@ lists - used to store multiple items in a single variable/store collections of d
                 ex: thislist = ["apple", "banana", "cherry"]
                     thislist.pop()
                     print(thislist) # ['apple', 'banana']
+
             - del keyword removes specified index
             ex: thislist = ["apple", "banana", "cherry"]
                 del thislist[0]
@@ -232,19 +240,106 @@ lists - used to store multiple items in a single variable/store collections of d
                 - delete entire list
                 ex: thislist = ["apple", "banana", "cherry"]
                     del thislist
+
             - clear() method - empties the list
             ex: thislist = ["apple", "banana", "cherry"]
                 thislist.clear()
                 print(thislist) # []
-        - loop through a list 
-            - for loop
+
+        - loops
+            - for loop - used when # of iterations is known
             ex: thislist = ["apple", "banana", "cherry"]
                 for x in thislist:
                 print(x)
-            - loop through by index numbers 
+                - loop through by index numbers 
+                ex: thislist = ["apple", "banana", "cherry"]
+                    for i in range(len(thislist)):
+                    print(thislist[i])
+
+            - while loop - used when execution is done until statement in program is proved wrong
+            # using len() function to determine the length of the list 
             ex: thislist = ["apple", "banana", "cherry"]
-                for i in range(len(thislist)):
+                i = 0
+                while i < len(thislist):
                 print(thislist[i])
+                i = i + 1
+                # apple banana cherry
+
+            - list comprehension - create a new list based on the values of an existing list 
+            ex: thislist = ["apple", "banana", "cherry"]
+                [print(x) for x in thislist]
+                - with for loop in use:
+                ex: fruits = ["apple", "banana", "cherry", "kiwi", "mango"]
+                    newlist = []
+
+                    for x in fruits:
+                    if "a" in x:
+                        newlist.append(x)
+
+                    print(newlist)
+                - with list comprehension in use:
+                ex: fruits = ["apple", "banana", "cherry", "kiwi", "mango"]
+
+                    newlist = [x for x in fruits if "a" in x]
+
+                    print(newlist)
+                - to replace value in list
+                ex: fruits = ["apple", "banana", "cherry", "kiwi", "mango"]
+                    newlist = [x if x != "banana" else "orange" for x in fruits]
+
+        - sorting lists
+            - alphanumerically - using sort() method 
+            ex: # ascending
+                thislist = ["orange", "mango", "kiwi", "pineapple", "banana"]
+                thislist.sort()
+                print(thislist)
+            ex: # descending
+                thislist = ["orange", "mango", "kiwi", "pineapple", "banana"]
+                thislist.sort(reverse = True)
+                print(thislist)
+
+            - sort list - reverse order by the reverse() method 
+            ex: thislist = ["banana", "Orange", "Kiwi", "cherry"]
+                thislist.reverse()
+                print(thislist) # ['cherry', 'Kiwi', 'Orange', 'banana']
+
+        - copy a list - using copy() method or list() method
+        ex: # using copy()
+            thislist = ["apple", "banana", "cherry"]
+            mylist = thislist.copy()
+            print(mylist) # ['apple', 'banana', 'cherry']
+        ex: # using list()
+            thislist = ["apple", "banana", "cherry"]
+            mylist = list(thislist)
+            print(mylist) # ['apple', 'banana', 'cherry']
+
+        - join lists 
+            - (+) operator 
+            ex: list1 = ["a", "b", "c"]
+                list2 = [1, 2, 3]
+
+                list3 = list1 + list2
+                print(list3) # ['a', 'b', 'c', 1, 2, 3]
+            - append() method
+            ex: list1 = ["a", "b" , "c"]
+                list2 = [1, 2, 3]
+
+                for x in list2:
+                list1.append(x)
+
+                print(list1) # ['a', 'b', 'c', 1, 2, 3]
+            - extend() method 
+            ex: list1 = ["a", "b" , "c"]
+                list2 = [1, 2, 3]
+
+                list1.extend(list2)
+                print(list1) # ['a', 'b', 'c', 1, 2, 3]
+        
+
+
+
+
+                            
 
 
         
