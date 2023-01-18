@@ -164,10 +164,11 @@ operators:
     - ** - exponentiation
     - // - floor division
 
-lists - used to store multiple items in a single variable/store collections of data
+lists: - used to store multiple items in a single variable/store collections of data
       - ordered (defined order), changeable (can change, add and remove items in a list after it has been created), and allow duplicate values
       - if you add new items to a list, the new items will be placed at then end of the list
       - are indexed and can have items with the same value
+      - mutable
       - ways to use lists:
 
         - access items - by referring to the index number
@@ -207,7 +208,7 @@ lists - used to store multiple items in a single variable/store collections of d
             ex: thislist = ["apple", "banana", "cherry"]
                 thislist.append("orange")
                 print(thislist) # ['apple', 'banana', 'cherry', 'orange']
-                
+
             - extend() method - adds collections of data to a list
             ex: thislist = ["apple", "banana", "cherry"]
                 tropical = ["mango", "pineapple", "papaya"]
@@ -334,8 +335,66 @@ lists - used to store multiple items in a single variable/store collections of d
 
                 list1.extend(list2)
                 print(list1) # ['a', 'b', 'c', 1, 2, 3]
-        
 
+tuples: - used to store multiple items in a single variable
+        - collection that is ordered, immutable/unchangeable (cannot change, add, or remove items once tuple is created), allows duplicate values 
+        - indexed
+        ex: thistuple = ("apple", "banana", "cherry")
+            print(thistuple) # ('apple', 'banana', 'cherry')
+        ex: thistuple = ("apple", "banana", "cherry", "apple", "cherry")
+            print(thistuple) # ('apple', 'banana', 'cherry', 'apple', 'cherry')
+
+        - access items - refer items
+        ex: thistuple = ("apple", "banana", "cherry")
+            print(thistuple[1]) # banana
+        ex: # negative indexing
+            thistuple = ("apple", "banana", "cherry")
+            print(thistuple[-1]) # cherry
+
+        - range of indexes
+        # positive indexes
+        ex: thistuple = ("apple", "banana", "cherry", "orange", "kiwi", "melon", "mango")
+            print(thistuple[:4]) # ('apple', 'banana', 'cherry', 'orange')
+        ex: thistuple = ("apple", "banana", "cherry", "orange", "kiwi", "melon", "mango")
+            print(thistuple[2:]) # ('cherry', 'orange', 'kiwi', 'melon', 'mango')
+        # negative indexes
+        ex: thistuple = ("apple", "banana", "cherry", "orange", "kiwi", "melon", "mango")
+            print(thistuple[-4:-1]) # ('orange', 'kiwi', 'melon')
+        
+        - checking values
+        ex: thistuple = ("apple", "banana", "cherry")
+            if "apple" in thistuple:
+            print("Yes, 'apple' is in the fruits tuple") # Yes, 'apple' is in the fruits tuple
+        
+        - changing values 
+            - convert tuple into a list or add tuples together 
+            - use del keyword to complete delete tuple
+
+        - unpacking a tuple
+            - packing a tuple = assigning values to it
+            - to unpack - can extract values back into variables
+            ex: fruits = ("apple", "banana", "cherry")
+
+                (green, yellow, red) = fruits
+
+                print(green)
+                print(yellow)
+                print(red)
+            - using the asterick (*) allows for values to be assigned to a variable as a LIST
+            ex: fruits = ("apple", "banana", "cherry", "strawberry", "raspberry")
+
+                (green, yellow, *red) = fruits
+
+                print(green)
+                print(yellow)
+                print(red)
+                """
+                apple
+                banana
+                ['cherry', 'strawberry', 'raspberry']
+                """
+        
+        - looping + joining tuples - similar to lists
 
 
 
